@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>list</title>
+</head>
+<body>
+	
+{% for response in responses %}
+
+	{{response.name}} <br>
+	<form action="{% url 'detail' %}">
+		<input type="hidden" value="{{ response.url }}" name="detail">
+		<button type='submit' >Read more</button>
+	</form>
+	<br>
+	
+{% endfor %}
+<br>
+{% if prev %}
+	<form action="{% url 'list' %}">
+		<input type="hidden" value="{{prev}}" name="prev">
+		<button type="submit">Back</button>
+	</form>
+{% endif %}
+<br>
+<form action="{% url 'list' %}">
+	<input type="hidden" value="{{next}}" name="next">
+	<button type="submit">Next</button>
+</form>
+
+</body>
+</html>

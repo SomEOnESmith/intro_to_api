@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>detail</title>
+</head>
+<body>
+	
+	<strong>Name:</strong> {{results.species.name|title}}<br>
+	<strong>Height:</strong> {{results.height}}<br>
+	<strong>Abilities:</strong>
+	{% for ability in results.abilities %}
+	<ul>
+		<li>{{ability.ability.name}}</li>
+	</ul>
+	{% endfor %}
+</body>
+</html>
