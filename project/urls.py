@@ -21,5 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('list/', views.pokemon_list, name= "list"),
     path('detail/', views.detail, name= "detail"),
+    path('event_api/', views.event_api, name= "event_api"),
+
 
 ]

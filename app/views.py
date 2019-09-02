@@ -29,3 +29,14 @@ def detail(request):
 	return render(request,'detail.html', context)
 
 
+def event_api(request):
+	url = 'https://api.github.com/events'
+	response = requests.get(url).json()
+	context = {
+		'responses' : response,
+	}
+	return render(request,'api.html',context)
+	# return JsonResponse(response)
+
+
+

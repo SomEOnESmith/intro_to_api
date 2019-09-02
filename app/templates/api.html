@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>api</title>
+</head>
+<body>
+
+	{% for response in responses %}
+		
+	type = {{response.type}} <br>
+	display login : {{response.actor.display_login}} <br>
+	
+	repo: {{response.repo.name}} <br>
+	<img  src="{{ response.actor.avatar_url }}">
+
+	<hr><br>
+	{% endfor %}
+	
+</body>
+</html>
